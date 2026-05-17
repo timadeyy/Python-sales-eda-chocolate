@@ -48,6 +48,9 @@ The analysis is built on a relational database structure consisting of 5 dataset
 * **Insight:** There are no significant seasonal spikes. Daily revenue remains completely static at ~$34,800 across all months in both 2023 and 2024. The business is stable, but stagnant.
 * **Recommendation:** Introduce aggressive seasonal marketing campaigns (e.g., Valentine's Day, Winter Holidays) to manufacture demand peaks and drive YoY growth.
 
+## Key Visualizations
+![Sesonality](images/avg.png)
+
 ## Repository Contents
 * `chocolate.ipynb`: The main Jupyter Notebook containing data cleaning, Exploratory Data Analysis (EDA), and financial calculations.
 * `Choco_dashboard.pdf`: A static executive dashboard visualizing the final metrics and trends.
