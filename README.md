@@ -3,6 +3,9 @@
 ## Project Overview
 This project provides a comprehensive data-driven audit of operational performance and marketing effectiveness for an international chain of chocolate shops. The primary objective is to identify key profit-driving regions, evaluate the ROI of discount strategies, and assess the actual impact of the customer loyalty program on financial outcomes.
 
+## Dashboard
+![Dashboard](images/dashboard.png)
+
 ## Key Performance Indicators (KPIs)
 * **Total Revenue:** $25.49M
 * **Total Profit:** $10.19M
