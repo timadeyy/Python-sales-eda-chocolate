@@ -1,60 +1,57 @@
-# Python-sales-eda-chocolate
-Strategic Sales Audit for a Global Chocolate Chain.
-This project answers that question by analyzing 1 million+ transaction records to find the "sweet spot" for marketing spend and regional expansion.
-Chocolate Sales Analysis 2023–2024
-Overview
+# Chocolate Store Chain: Sales & Marketing Performance Analysis
 
-Analysis of 1,000,000 sales transactions across 6 countries, 6 brands, and 4 store types (Airport, Mall, Online, Retail) over a two-year period (2023–2024).  
-Objective
+## Project Overview
+This project provides a comprehensive data-driven audit of operational performance and marketing effectiveness for an international chain of chocolate shops. The primary objective is to identify key profit-driving regions, evaluate the ROI of discount strategies, and assess the actual impact of the customer loyalty program on financial outcomes.
 
-Identify key profit drivers, evaluate the effectiveness of the loyalty program, and assess the impact of various discount tiers on overall profitability.  
-Dataset
+## Key Performance Indicators (KPIs)
+* **Total Revenue:** $25.49M
+* **Total Profit:** $10.19M
+* **Profit Margin:** 40.00%
+* **Total Orders:** 1M+
 
-The analysis is based on five relational tables:  
-File	Description
-sales.csv	
+## Technology Stack
+* **Language:** Python 3
+* **Data Manipulation:** Pandas
+* **Data Visualization:** Matplotlib, Ticker (for professional chart formatting)
+* **Reporting:** PDF Dashboard Generation
 
-1,000,000 transactions containing revenue, profit, and discount data.  
-products.csv	
+## Data Architecture
+The analysis is built on a relational database structure consisting of 5 datasets (CSV):
+1. `sales.csv`: Core transaction logs (order dates, quantities, unit pricing, discounts applied, revenue, cost, and profit).
+2. `products.csv`: Product catalog detailing brands (Ferrero, Lindt, etc.), categories (Praline, Dark, White, etc.), cocoa percentages, and weights.
+3. `stores.csv`: Point-of-sale information including geographic location (country, city) and store type (Retail, Mall, Airport, Online).
+4. `customers.csv`: Client demographics (age, gender) and loyalty program membership status.
+5. `calendar.csv`: Date grid used for time-series and seasonality extraction.
 
-200 unique products across 6 brands and 5 categories.  
-stores.csv	
+## Core Insights & Business Recommendations
 
-100 physical and online locations in 6 countries.  
-customers.csv	
+### 1. Geographic Performance
+* **Insight:** Canada and the USA are the undisputed market leaders, generating $2.14M and $2.02M in profit, respectively. Conversely, Germany is the weakest market and relies disproportionately on Airport store traffic.
+* **Recommendation:** Consolidate retail presence in North America. For Germany, halt expansion of standard retail/mall stores and pivot the strategy entirely toward travel retail (airports) or online sales.
 
-50,000 unique customer profiles with age and loyalty status.  
-calendar.csv	
+### 2. Brand & Category Dynamics
+* **Insight:** All brands have nearly identical average unit prices (~$9.00). However, Ferrero dominates total profit ($1.87M) purely through massive transaction volume (183,603 orders). By category, Praline is the top performer ($2.82M), while Milk chocolate severely underperforms ($1.27M).
+* **Recommendation:** Optimize inventory space to prioritize Praline and Ferrero products. Conduct a pricing or quality review of the Milk chocolate line to understand its low market penetration.
 
-Date dimensions for seasonality tracking.  
-Key Findings
+### 3. Discount Strategy & Profitability
+* **Insight:** Current discounting practices are aggressively eroding margins. Applying a 20% discount drops the average profit per order from $10.81 down to $8.64.
+* **Recommendation:** Implement a strict 10% cap on standard discounts. Deeper discounts should be reserved exclusively for inventory clearance, not routine promotions.
 
-    Market Leaders: Canada ($2,143,450 profit) and the UK ($2,028,217 profit) are the highest-performing markets.  
+### 4. Loyalty Program Efficacy
+* **Insight:** The current loyalty program has zero measurable financial impact. Both loyalty members and non-members generate the exact same profit per order (~$10.20).
+* **Recommendation:** Immediately restructure the loyalty program. Shift away from flat discounts and move towards volume-based incentives or exclusive product access to increase the average order value (AOV).
 
-    Brand Performance: Ferrero leads in total profit ($1.87M) and transaction volume (183,603 orders). Profit is driven by volume, as all brands maintain nearly identical average unit prices (~$9.00).  
+### 5. Time-Series & Seasonality
+* **Insight:** There are no significant seasonal spikes. Daily revenue remains completely static at ~$34,800 across all months in both 2023 and 2024. The business is stable, but stagnant.
+* **Recommendation:** Introduce aggressive seasonal marketing campaigns (e.g., Valentine's Day, Winter Holidays) to manufacture demand peaks and drive YoY growth.
 
-    Product Categories: Praline is the most profitable category ($2,829,380), while Milk chocolate shows the lowest performance ($1,273,506).  
+## Repository Contents
+* `chocolate.ipynb`: The main Jupyter Notebook containing data cleaning, Exploratory Data Analysis (EDA), and financial calculations.
+* `Choco_dashboard.pdf`: A static executive dashboard visualizing the final metrics and trends.
+* `Data Files/`: The 5 `.csv` files required to execute the analysis.
 
-    Loyalty Gap: The loyalty program shows no measurable impact on spending behavior; both members and non-members generate an average profit of approximately $10.20 per order.  
-
-    Discount Impact: Every discount tier leads to significant profit erosion. A 20% discount reduces mean profit from $10.81 to $8.64 per item without a sufficient volume boost to compensate for the margin loss.  
-
-    Stability over Growth: The business remains stable but stagnant, with revenue per day hovering around $34,800 across all months of 2023 and 2024.  
-
-Tools
-
-    Python: Core logic and processing.
-
-    Pandas: Data manipulation and relational merging.
-
-    Matplotlib: Data visualization and trend analysis.
-
-How to Run
-
-    Clone the repository to your local machine.
-
-    Ensure pandas and matplotlib are installed in your environment.
-
-    Place the required CSV files (sales.csv, products.csv, stores.csv, customers.csv, calendar.csv) in the same folder as the notebook.
-
-    Open and run all cells in chocolate.ipynb.
+## How to Run
+1. Clone the repository to your local machine.
+2. Ensure you have Python 3 and the required libraries (`pandas`, `matplotlib`) installed.
+3. Keep the `.csv` data files in the same directory as the notebook.
+4. Run `chocolate.ipynb` cell-by-cell to reproduce the analysis and charts.
